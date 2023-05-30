@@ -1,0 +1,103 @@
+ "AssumedRoleUser": {
+        "AssumedRoleId": "AROAUYFGET4OUINO2P5WO:AWSCLI-Session", 
+        "Arn": "arn:aws:sts::326765944605:assumed-role/my-new-role/AWSCLI-Session"
+    }, 
+    "Credentials": {
+        "SecretAccessKey": "RwSuG0F7m09TU7+kxeef6tQefflkga1v98oCU+WV", 
+        "SessionToken": "FwoGZXIvYXdzEGkaDOT17v6HXKAeOfs9piKyAZw96rJehtP3Dq6kWNNAIv0X31HTAkc4kGuVxWFvjiE73oXhaFcOUZ7yMFkD0mJSUcvi4rZH2bLPn/xeOsjtCpccEQOBK7IhYcdbc79iQc79w2VZB5RBKEa+QG13/r5qmkKi5iYb+J06ous0Kgmd5fexksYo76ovDzAGQ9htR7wnUl9MuLvPl6YqELH1G1nduhOeWhfqn2cO+tX3ARrMKg5MRjaK7rZ7vQ5jji1TL5/P6yMoiYS7mgYyLXUqjGHiucpcn6LXIl9Z3bKupQVZGcMpwO86ICjhR8TSOWfktIjiBNUUWgMwmQ==", 
+        "Expiration": "2022-10-18T16:11:05Z", 
+        "AccessKeyId": "ASIAUYFGET4OU4LIV3DU"
+
+
+aws sts assume-role --role-arn arn:aws:iam::123456789012:role/role-name --role-session-name AWSCLI-Session --profile test-user> assume-role-output.txt
+
+
+
+#aws sts assume-role --role-arn arn:aws:iam::326765944605:role/my-new-role --role-session-name AWSCLI-Session  > assume-role-output.txt
+
+
+#
+
+
+
+arn:aws:iam::326765944605:role/my-new-role
+
+aws sts assume-role --role-arn "arn:aws:iam::326765944605:role/my-new-role" --role-session-name AWSCLI-Session
+
+
+
+export AWS_ACCESS_KEY_ID=ASIAUYFGET4OU4LIV3DU
+export AWS_SECRET_ACCESS_KEY=RwSuG0F7m09TU7+kxeef6tQefflkga1v98oCU+WV
+export AWS_SESSION_TOKEN=FwoGZXIvYXdzEGkaDOT17v6HXKAeOfs9piKyAZw96rJehtP3Dq6kWNNAIv0X31HTAkc4kGuVxWFvjiE73oXhaFcOUZ7yMFkD0mJSUcvi4rZH2bLPn/xeOsjtCpccEQOBK7IhYcdbc79iQc79w2VZB5RBKEa+QG13/r5qmkKi5iYb+J06ous0Kgmd5fexksYo76ovDzAGQ9htR7wnUl9MuLvPl6YqELH1G1nduhOeWhfqn2cO+tX3ARrMKg5MRjaK7rZ7vQ5jji1TL5/P6yMoiYS7mgYyLXUqjGHiucpcn6LXIl9Z3bKupQVZGcMpwO86ICjhR8TSOWfktIjiBNUUWgMwmQ==
+
+
+https://aws.amazon.com/premiumsupport/knowledge-center/iam-assume-role-cli/----to check for cli commands
+
+
+aws sts assume-role --role-arn arn:aws:iam::326765944605:role/my-good --role-session-name AWSCLI-Session  > assume-role-output.txt
+
+
+
+
+Content-Type: multipart/mixed; boundary="//"
+MIME-Version: 1.0
+
+--//
+Content-Type: text/cloud-config; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="cloud-config.txt"
+
+#cloud-config
+cloud_final_modules:
+- [scripts-user, always]
+
+--//
+Content-Type: text/x-shellscript; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="userdata.txt"
+
+#!/bin/bash
+aws sts assume-role --role-arn arn:aws:iam::326765944605:role/my-new-role --role-session-name AWSCLI-Session  > assume-role-output.txt
+export AWS_ACCESS_KEY_ID=ASIAUYFGET4OU4LIV3DU
+export AWS_SECRET_ACCESS_KEY=RwSuG0F7m09TU7+kxeef6tQefflkga1v98oCU+WV
+export AWS_SESSION_TOKEN=FwoGZXIvYXdzEGkaDOT17v6HXKAeOfs9piKyAZw96rJehtP3Dq6kWNNAIv0X31HTAkc4kGuVxWFvjiE73oXhaFcOUZ7yMFkD0mJSUcvi4rZH2bLPn/xeOsjtCpccEQOBK7IhYcdbc79iQc79w2VZB5RBKEa+QG13/r5qmkKi5iYb+J06ous0Kgmd5fexksYo76ovDzAGQ9htR7wnUl9MuLvPl6YqELH1G1nduhOeWhfqn2cO+tX3ARrMKg5MRjaK7rZ7vQ5jji1TL5/P6yMoiYS7mgYyLXUqjGHiucpcn6LXIl9Z3bKupQVZGcMpwO86ICjhR8TSOWfktIjiBNUUWgMwmQ==
+
+
+
+
+
+
+
+
+AssumedRoleUser": {
+        "AssumedRoleId": "AROAUYFGET4OUE5NF3RWL:AWSCLI-Session", 
+        "Arn": "arn:aws:sts::326765944605:assumed-role/my-good/AWSCLI-Session"
+    }, 
+    "Credentials": {
+        "SecretAccessKey": "mMekn1XbbPS5bH7ucC9vfdae+HZV4rX5OEdsMSGH", 
+        "SessionToken": "FwoGZXIvYXdzEHQaDAKOI9sT9OujOBdkeyKyAREOjmwc1EgaMWSpZgxIpOM3yO2/BCJ54F7Nh/u7xeVbM7z+6RHcgKaBwKxmHjMG1CUSPLirIzX3Es7ap8tYS26Y6ucv3Jis5zqrZ2CRnjRwLA1sVQij2v8JeW9lsu/tUSSPdgzps25j1OyAfYdLQIbrPWHCY0Fq0Yg/KveFK1DVegE1k2nA0wBu3/TpZp+8KAjmF2Sd9L7P/gfbKpEh+K58PMn/VlEiyZjtT4e3U0fMNUUo98O9mgYyLREOVP/966VILqA/zb31mBSOy6HOEAL5IU809xOYoI24teyFyh4EQQMhEvp40w==", 
+        "Expiration": "2022-10-19T03:33:27Z", 
+        "AccessKeyId": "ASIAUYFGET4O3FUJ3YHR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--//--
+
+
+
+
+
